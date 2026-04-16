@@ -1,8 +1,10 @@
+
+
 /**
  * Selects the element with the id 'main-heading' and changes its text content to 'DOM Manipulation Challenge'.
  */
 function changeHeadingText() {
-  // Select element by ID and change its text content
+// Select element by ID and change its text content
   const heading = document.getElementById('main-heading');
   if (heading) {
     heading.textContent = 'DOM Manipulation Challenge';
@@ -53,8 +55,21 @@ function highlightParagraph() {
 function removeElement() {
   // Select the element to remove
   const elementToRemove = document.getElementById('to-be-removed');
-  if (elementToRemove) {
-    // Remove the child from its parent (as shown on page 20, Chapter 9)
-    elementToRemove.remove();
+  if (elementToRemove && elementToRemove.parentNode) {
+    // Remove the child from its parent (traditional DOM method)
+    elementToRemove.parentNode.removeChild(elementToRemove);
   }
+}
+
+
+// Do not edit the lines below.
+// These lines are for testing purposes.
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        changeHeadingText,
+        changeBoxColor,
+        addNewItem,
+        highlightParagraph,
+        removeElement
+    };
 }
